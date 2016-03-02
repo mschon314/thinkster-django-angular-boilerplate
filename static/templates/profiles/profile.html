@@ -1,0 +1,14 @@
+<div class="profile" ng-show="vm.profile">
+    <div class="jumbotron profile__header">
+        <h1 class="profile__username">+{{ vm.profile.username }}</h1>
+        <p class="profile__tagline">{{ vm.profile.tagline }}</p>
+    </div>
+
+    <posts posts="vm.posts"></posts>
+</div>
+
+<a class="btn btn-primary btn-fab btn-raised mdi-content-add btn-add-new-post"
+   href="javascript:void(0)"
+   ng-show="vm.isAuthenticated"
+   ng-dialog="/static/templates/posts/new-post.html"
+   ng-dialog-controller="NewPostController as vm"></a>
